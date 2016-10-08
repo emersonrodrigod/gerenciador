@@ -29,7 +29,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Contas/Caixas</a></li>
+                                <li><a href="paginas/caixa/index.php">Contas/Caixas</a></li>
                                 <li><a href="#">Categorias</a></li>
                                 <li><a href="#">Usuários</a></li>
 
