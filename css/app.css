@@ -1,0 +1,29 @@
+.receber {
+    color: #5cb85c;
+}
+
+.pagar {
+    color: #d9534f;
+}
+
+.categoria-pagar {
+    background:#d9534f; 
+}
+
+.categoria-receber {
+    background: #5cb85c;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.filtros {
+    display: none;
+}
+
+.centraliza {
+    width: 1170px;
+    margin: 0 auto;
+}
+

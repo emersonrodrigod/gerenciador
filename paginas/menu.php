@@ -5,6 +5,7 @@
         <title>Gerenciador financeiro</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="/gerenciador/css/app.css" rel="stylesheet">
     </head>
     <body>
 
@@ -25,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/gerenciador">Painel de controle <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Lançamentos</a></li>
+                        <li><a href="/gerenciador/paginas/lancamentos/index.php">Lançamentos</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros <span class="caret"></span></a>
                             <ul class="dropdown-menu">
