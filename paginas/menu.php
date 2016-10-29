@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if(! isset($_SESSION['login'])){
+    header('location:/gerenciador/paginas/login');
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,11 +47,11 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Emerson Dário <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login']['nome'];?> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Trocar Senha</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Sair</a></li>
+                                <li><a href="/gerenciador/paginas/login/sair.php">Sair</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -16,17 +16,17 @@
 
 
 
-            <form class="form-horizontal well col-md-6">
+            <form class="form-horizontal well col-md-6" method="post" action="processa.php">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Username">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="Username" name="username">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Senha" name="senha">
                     </div>
                 </div>
            
