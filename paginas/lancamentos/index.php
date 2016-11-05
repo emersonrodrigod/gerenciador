@@ -10,12 +10,12 @@
 
     <div class="row">
         <div class="col-md-6">
-            <a href="#" class="btn btn-danger">
+            <a href="pagar.php" class="btn btn-danger">
                 <i class="glyphicon glyphicon-arrow-down"></i>
                 Conta  à Pagar
             </a>
 
-            <a href="#" class="btn btn-success">
+            <a href="receber.php" class="btn btn-success">
                 <i class="glyphicon glyphicon-arrow-up"></i>
                 Conta  à Receber
             </a>
