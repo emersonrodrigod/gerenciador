@@ -143,13 +143,13 @@
                         <td class="txt-center">
                             
                             <?php if($resultado['situacao'] == 'A') { ?>
-                            <a href="#" class="btn btn-xs btn-success">
+                            <a href="baixa?id=<?php echo $resultado[0]; ?>" class="btn btn-xs btn-success">
                                 <i class="glyphicon glyphicon-arrow-down" title="BAIXAR/RECEBER"></i>
                             </a>
                             <?php }?>
 
                             <?php if($resultado['situacao'] == 'R') { ?>
-                            <a href="#" class="btn btn-xs btn-danger">
+                            <a href="processaEstorno?id=<?php echo $resultado[0]; ?>" class="btn btn-xs btn-danger">
                                 <i class="glyphicon glyphicon-arrow-up" title="CANCELA BAIXA/RECEBIMENTO"></i>
                             </a>
                             <?php } ?>
