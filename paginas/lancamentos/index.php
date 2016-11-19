@@ -92,31 +92,69 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="txt-center">22/10/2016</td>
+                    
+                     <?php
+                    //Arquivo de conexao com o banco
+                    include('../conexao.php');
+
+                    $sql = "select * from lancamento join categoria on (categoria.id = lancamento.categoria_id)";
+
+                    $query = $conexao->query($sql);
+
+                    while ($resultado = $query->fetch_array()) {
+                        ?>
+                    
+                    
+                    
+                     <tr>
+                        <td class="txt-center"><?php echo date("d/m/Y",strtotime($resultado['emissao']));?></td>
                         <td>
-                            <span class="badge categoria-receber">Salários</span>
-                            Recebimento de salário
+                            <?php 
+                                if($resultado['tipo'] == 'P'){
+                                    $tipo = 'categoria-pagar';
+                                    $valor = 'pagar';
+                                }else {
+                                    $tipo = 'categoria-receber';
+                                    $valor = 'receber';
+                                }
+                            ?>
+                            <span class="badge <?php echo $tipo; ?>"><?php echo $resultado[12]; ?></span>
+                            <?php echo $resultado['descricao']; ?>
                         </td>
-                        <td class="txt-center">22/10/2016</td>
+                        <td class="txt-center"><?php echo date("d/m/Y",strtotime($resultado['vencimento'])); ?></td>
                         <td class="txt-center">
+                            
+                            <?php 
+                            if($resultado['situacao'] == 'R') {
+                                $situacao = 'glyphicon-thumbs-up';
+                            }else {
+                                $situacao = 'glyphicon-thumbs-down';
+                            }
+                            ?>
+                            
                             <i 
-                                class="glyphicon glyphicon glyphicon-thumbs-up"
+                                class="glyphicon <?php echo $situacao; ?>"
                                 title="PAGO/RECEBIDO"
                                 >
 
                             </i>
                         </td>
-                        <td class="txt-center"><span class="receber">R$ 2.000,00</span></td>
+                        <td class="txt-center"><span class="<?php echo $valor; ?>">R$ <?php echo number_format($resultado['valor'],2,',','.'); ?></span></td>
                         <td class="txt-center">
+                            
+                            <?php if($resultado['situacao'] == 'A') { ?>
                             <a href="#" class="btn btn-xs btn-success">
                                 <i class="glyphicon glyphicon-arrow-down" title="BAIXAR/RECEBER"></i>
                             </a>
+                            <?php }?>
 
+                            <?php if($resultado['situacao'] == 'R') { ?>
                             <a href="#" class="btn btn-xs btn-danger">
                                 <i class="glyphicon glyphicon-arrow-up" title="CANCELA BAIXA/RECEBIMENTO"></i>
                             </a>
+                            <?php } ?>
 
+                            <?php if($resultado['situacao'] == 'A') { ?>
                             <a href="#" class="btn btn-xs btn-primary">
                                 <i class="glyphicon glyphicon-pencil" title="EDITAR"></i>
                             </a>
@@ -124,43 +162,12 @@
                             <a href="#" class="btn btn-xs btn-danger">
                                 <i class="glyphicon glyphicon-trash" title="EXCLUIR"></i>
                             </a>
+                            <?php } ?>
                         </td>
                     </tr>
 
-                    <tr>
-                        <td class="txt-center">22/10/2016</td>
-                        <td>
-                            <span class="badge categoria-pagar">Moradia</span>
-                            Aluguel
-                        </td>
-                        <td class="txt-center">22/10/2016</td>
-                        <td class="txt-center">
-                            <i 
-                                class="glyphicon glyphicon glyphicon-thumbs-down"
-                                title="PENDENTE"
-                                >
-
-                            </i>
-                        </td>
-                        <td class="txt-center"><span class="pagar">R$ 650,00</span></td>
-                        <td class="txt-center">
-                            <a href="#" class="btn btn-xs btn-success">
-                                <i class="glyphicon glyphicon-arrow-down" title="BAIXAR/RECEBER"></i>
-                            </a>
-
-                            <a href="#" class="btn btn-xs btn-danger">
-                                <i class="glyphicon glyphicon-arrow-up" title="CANCELA BAIXA/RECEBIMENTO"></i>
-                            </a>
-
-                            <a href="#" class="btn btn-xs btn-primary">
-                                <i class="glyphicon glyphicon-pencil" title="EDITAR"></i>
-                            </a>
-
-                            <a href="#" class="btn btn-xs btn-danger">
-                                <i class="glyphicon glyphicon-trash" title="EXCLUIR"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    
+                    <?php }?>
                 </tbody>
             </table>
         </div>
