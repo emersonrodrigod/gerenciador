@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(! isset($_SESSION['login'])){
+if (!isset($_SESSION['login'])) {
     header('location:/gerenciador/paginas/login');
 }
 ?>
@@ -13,6 +13,9 @@ if(! isset($_SESSION['login'])){
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="/gerenciador/css/app.css" rel="stylesheet">
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
     </head>
     <body>
 
@@ -47,7 +50,7 @@ if(! isset($_SESSION['login'])){
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login']['nome'];?> <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login']['nome']; ?> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/gerenciador/paginas/login/senha.php">Trocar Senha</a></li>
                                 <li role="separator" class="divider"></li>
